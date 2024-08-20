@@ -5,3 +5,14 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
 })
+
+// import { defineConfig } from 'vite';
+// import nodePolyfills from 'rollup-plugin-polyfill-node';
+
+// export default defineConfig({
+//   plugins: [
+//     nodePolyfills({
+//       include: ['events']
+//     })
+//   ]
+// });
