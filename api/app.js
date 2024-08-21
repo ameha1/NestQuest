@@ -6,13 +6,19 @@ import cors from 'cors';
 
 const app = express();
 
+app.use(cors({
+    origin : "*",
+  }));
+
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({origin:process.env.CLIENT_URL, credentials:true}))
 
 app.use("/api/post", postRouter);
 app.use("/api/auth",auth);
 
-app.listen(8080,()=>{
-    console.log('server is running ...');
-})
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
